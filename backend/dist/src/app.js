@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const cors = require('cors');
 const express = require('express');
-require('./database/models/index');
+require('./database/models/');
 const userRouter = require('./routes/user');
 const transactionRouter = require('./routes/transaction');
 const app = express();
