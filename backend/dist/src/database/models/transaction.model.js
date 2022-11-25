@@ -1,0 +1,31 @@
+"use strict";
+var { Model, DataTypes } = require('sequelize');
+class Transaction extends Model {
+    static init(sequelize) {
+        super.init({
+            id: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                allowNull: false,
+                autoIncrement: true,
+            },
+            debitedAccountId: {
+                type: DataTypes.INTEGER,
+                foreignKey: true,
+            },
+            creditedAccountId: {
+                type: DataTypes.INTEGER,
+                foreignKey: true,
+            },
+            value: DataTypes.DECIMAL
+        }, {
+            sequelize,
+            timestamps: true,
+            tableName: 'transactions',
+        });
+        Transaction.associate = (models) => {
+            Transaction.belongsTo(models.Account, { foreignKey: "id" });
+        };
+    }
+}
+module.exports = Transaction;
