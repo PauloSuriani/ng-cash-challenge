@@ -32,7 +32,7 @@ Desculpe, imagens estarão diponíveis em breve!
 
 # Rode local
 
-### Opção 1: Aplicação dockerizada (necessário Docker e Docker Compose)
+### Opção 1: Aplicação dockerizada (necessário Docker e Docker Composer)
 
 1. Clone o repositório
   * `git@github.com:PauloSuriani/ng-cash-challenge.git`
@@ -40,7 +40,11 @@ Desculpe, imagens estarão diponíveis em breve!
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd ng-cash-challenge`
   
-    
+  * Inicialize o banco e faça a conexão com o Sequelize  
+    * `docker-compose run --rm backend npx sequelize-cli db:create`
+    * `docker-compose run --rm backend npx sequelize-cli db:migrate`
+
+
 2. Rode o arquivo orquestrador de containers `docker-compose.yml` 
   * `sudo docker-compose up`
   
@@ -48,7 +52,7 @@ Desculpe, imagens estarão diponíveis em breve!
 3. Acesse a aplicação em `http://localhost:3001/`
 
 
-4. Encerre o projeto
+4. Desmonte os containers (encerrar o projeto)
   * `sudo docker-compose down`
 
 
