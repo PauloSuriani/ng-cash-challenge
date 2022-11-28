@@ -28,10 +28,12 @@ services:
       - PORT=3000
       # Os dados abaixo se referem ao container `postgres` em comunic. interna
       - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=postgres
       - PGUSER=postgres
-      - PSQL_HOST=postgres
-      - PSQL_DATABASE=ng-cash-db
-      - PSQL_PORT=5432
+      - POSTGRES_USER=postgres
+      - PGHOST=postgres
+      - PGDATABASE=ng-cash-db
+      - PGPORT=5432
     healthcheck:
       test: ["CMD", "lsof", "-t", "-i:3000"] 
       timeout: 10s
@@ -46,9 +48,10 @@ services:
       - ./db-data/:/var/lib/postgresql/data/
     environment:
       - POSTGRES_PASSWORD=postgres
+      - PGPASSWORD=postgres
       - PGUSER=postgres
       - POSTGRES_USER=postgres
-      - POSTGRES_DB=ng-cash-db
+      - PGDATABASE=ng-cash-db
     restart: 'always'
     healthcheck:
       test: ["CMD-SHELL", "pg_isready"]
