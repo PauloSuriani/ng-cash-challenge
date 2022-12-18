@@ -1,4 +1,4 @@
-# Ng-cash Challenge
+# Aplicativo "Meu Banco"
 
 Olá, bem vindo ao repositório. Segue um breve contexto sobre este projeto. 
 
