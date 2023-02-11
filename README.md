@@ -1,6 +1,6 @@
-# Aplicativo "Meu Banco"
+# Aplicativo "Meu Banco Digital"
 
-Olá, bem vindo ao repositório. Segue um breve contexto sobre este projeto. 
+Olá, bem vindo ao repositório. Segue um breve contexto sobre este projeto, o qual foi inicialmente proposto como desafio técnico num processo seletivo para uma empresa deste ramo.  
 
 
 ### Contexto
